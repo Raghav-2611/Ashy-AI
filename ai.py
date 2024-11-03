@@ -8,13 +8,11 @@ import wikipedia
 import webbrowser
 from config import apikey
 
-# Set up OpenAI API
 openai.api_key = apikey
 
-# Initialize recognizer and speech engine
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
-engine.setProperty('voice', engine.getProperty('voices')[1].id)  # Set to female voice
+engine.setProperty('voice', engine.getProperty('voices')[1].id) 
 
 def speak(text):
     """Convert text to speech"""
@@ -44,17 +42,14 @@ def search_web(query, engine="google"):
         "brave": "https://search.brave.com/search?q={}"
     }
 
-    # Choose the search engine URL
     if engine in search_engines:
         search_url = search_engines[engine].format(query)
     else:
         speak(f"Search engine {engine} not found. Defaulting to Google.")
         search_url = search_engines["google"].format(query)
 
-    # Voice feedback before opening the browser
     speak(f"Searching for {query} on {engine}.")
 
-    # Attempt to open the web browser with error handling
     try:
         webbrowser.open(search_url)
     except Exception as e:
@@ -62,7 +57,6 @@ def search_web(query, engine="google"):
         print(f"Error: {e}")
 
 
-# Task Execution Function
 def perform_task(command):
     """Perform tasks based on recognized command"""
     if 'play' in command:
@@ -91,7 +85,6 @@ def perform_task(command):
     else:
         speak('Sorry, I cannot perform that task.')
 
-# Main Function to Run AI Assistant
 def main():
     speak("Hello, I am Ashy. How can I help you today?")
     while True:
