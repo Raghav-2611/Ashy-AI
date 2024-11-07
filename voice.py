@@ -1,3 +1,7 @@
+
+#this is an sample file for trying and testing to make the ai speak in different tones according to the command or talk
+
+
 import os
 import openai
 import speech_recognition as sr
@@ -8,10 +12,8 @@ import wikipedia
 import webbrowser
 from config import apikey
 
-# Set up OpenAI API
 openai.api_key = apikey
 
-# Initialize recognizer and speech engine
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
 
@@ -22,11 +24,10 @@ def set_voice_properties():
         if "female" in voice.name.lower():
             engine.setProperty('voice', voice.id)
             break
-    # Set rate and volume to natural levels
-    engine.setProperty('rate', 150)  # Standard speaking rate
-    engine.setProperty('volume', 0.9)  # Standard volume level
 
-# Set voice properties once at the beginning
+    engine.setProperty('rate', 150) 
+    engine.setProperty('volume', 0.9) 
+
 set_voice_properties()
 
 def speak(text):
@@ -79,7 +80,6 @@ def perform_task(command):
     else:
         speak('Sorry, I cannot perform that task.')
 
-# Main Function to Run AI Assistant
 def main():
     speak("Hello, I am Ashy. How can I help you today?")
     while True:
