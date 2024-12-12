@@ -3,7 +3,7 @@
 #to-do
 #add different tones
 #add pitch manipulation
-
+#voice modulation
 import os
 import openai
 import speech_recognition as sr
