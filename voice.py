@@ -1,6 +1,4 @@
-
 #this is an sample file for trying and testing to make the ai speak in different tones according to the command or talk
-#to-do
 #add different tones
 #add pitch manipulation
 #voice modulation
