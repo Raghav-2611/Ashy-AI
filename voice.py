@@ -12,7 +12,7 @@ import wikipedia
 import webbrowser
 from config import apikey
 
-openai.api_key = apikey
+openai.api_key = 
 
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
