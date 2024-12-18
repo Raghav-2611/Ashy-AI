@@ -26,7 +26,7 @@ def set_voice_properties():
             break
 
     engine.setProperty('rate', 150) 
-    engine.setProperty('volume', 0.9) 
+    engine.setProperty('volume', 0.7) 
 
 set_voice_properties()
 
